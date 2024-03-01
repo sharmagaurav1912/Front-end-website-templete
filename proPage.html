@@ -16,34 +16,19 @@
     <div class="container my-5">
         <div class="row bg-light" id="pro-cont">
             <div class="col-md-5 py-5 px-5 bg-success">
-                <img src="check.png" class="w-100 mb-3">
-                <span class="display-6 text-white mx-5" id="selected-pro-price" >Price</span>
+                <img id="selected-pro-img" src="check.png" class="w-100 mb-3">
+                <span class="display-6 text-white mx-5" id="selected-pro-price">Price</span>
             </div>
             <div class="col-md-7 py-5 px-5">
-                <h1 id="selected-pro-name">Name of the product</h1>
-                <p id="selected-pro-des">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur voluptate sint eius commodi consequatur, nisi quaerat velit quisquam in molestias eos placeat ratione voluptatibus laudantium dignissimos! Eligendi explicabo quo, delectus sed voluptatum deleniti ab sint voluptates vero tempora doloremque, nobis vitae quam error animi rerum laboriosam consequuntur ducimus nostrum excepturi hic sunt molestias. Repudiandae impedit beatae alias molestias suscipit officiis, adipisci minima accusamus quisquam nulla quidem excepturi quam qui explicabo voluptates distinctio temporibus obcaecati earum. Iure eaque exercitationem inventore! Corporis sed ad facere, nemo nihil quibusdam quam at recusandae fugiat voluptatum cum voluptatibus laboriosam aperiam, maiores cumque dicta, odit pariatur.</p>
-                <button onclick="click()">Click</button>
+                <h1 id="selected-pro-name">Heading</h1>
+                <p id="selected-pro-des">Paragraph</p>
+                <button class="border-0 bg-primary rounded text-white px-2 py-1 w-25 mt-3">Buy Now</button>
             </div>
         </div>
     </div>
 
-    <script src='bootstrap.bundle.min.js'></script>
     <script src="script.js"></script>
-
-    <script>
-
-        function click() {
-
-            console.log("clicked");
-            
-            document.querySelector('selected-pro-price')
-            .innerHTML = "clicked";
-            document.querySelector('selected-pro-name')
-            .innerHTML = "clicked";
-            document.querySelectorAll('selected-pro-des')                
-            .innerHTML = "clicked";
-        }
-    </script>
+    <script src='bootstrap.bundle.min.js'></script>
     
 </body>
 </html>
