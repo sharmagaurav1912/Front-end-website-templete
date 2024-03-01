@@ -1,3 +1,7 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// cart script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 let isUserLogged = false;
 let count = 0;
 
@@ -20,6 +24,13 @@ cartButton.forEach((e) => {
     })
 })
 
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// buy button script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 let buyButton = document.querySelectorAll('#buy-btn');
@@ -39,36 +50,45 @@ buyButton.forEach((e) => {
     })
 })
 
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// product page script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 let proImg = document.querySelectorAll('#pro-img');
 proImg.forEach((e) => {
     e.addEventListener("click",(n) => {
 
-        var img = n.target.parentNode.childNodes[1].src;
-        var name = n.target.parentNode.childNodes[3].innerText;
-        var description = n.target.parentNode.childNodes[5].innerText;
-        var price = n.target.parentNode.childNodes[7].innerText;
+        var proImg = n.target.parentNode.childNodes[1].src;
+        var proName = n.target.parentNode.childNodes[3].innerText;
+        var proDescription = n.target.parentNode.childNodes[5].innerText;
+        var proPrice = n.target.parentNode.childNodes[7].innerText;
         
-            console.log(img);
-            console.log(name);
-            console.log(description);
-            console.log(price);
+            console.log(proImg);
+            console.log(proName);
+            console.log(proDescription);
+            console.log(proPrice);
 
-            // window.open('http://127.0.0.1:5500/proPage.html');
-
-            // document.querySelector('#selected-pro-img').src = img;
-            // document.querySelector('#selected-pro-price').innerText = price;
-            // document.querySelector('#selected-pro-name').innerText = name;
-            // document.querySelector('#selected-pro-des').innerText = description;
-
-            // console.log(document.querySelector('#selected-pro-price').innerText);
-            // console.log(document.querySelector('#selected-pro-name').innerText);
-            // console.log(document.querySelector('#selected-pro-des').innerText);
-        
+            window.location = './ProductPage.html';
+            
+            // document.getElementById('selected-pro-img').src = img;
+            // document.getElementById('selected-pro-price').innerText = price;
+            // document.getElementById('selected-pro-name').innerText = name;
+            // document.getElementById('selected-pro-des').innerText = description;
+        })
     })
-})
 
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//login page script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 let login = document.getElementById('login');
@@ -90,25 +110,24 @@ login.addEventListener("click",() => {
     
 })
 
-//             document.querySelector('#selected-pro-img')
-//             .addEventListener("click",()=>{
-//                 console.log("image clicked");
-//             })
-//             document.querySelector('#selected-pro-price')
-//             .addEventListener("click",()=>{
-//                 console.log("price clicked");
-//             })
-//             document.querySelector('#selected-pro-name')
-//             .addEventListener("click",()=>{
-//                 console.log("name clicked");
-//             })
-//             document.querySelector('#selected-pro-des')
-//             .addEventListener("click",()=>{
-//                 console.log("description clicked");
-//             })
 
-// function click(params) {
-//     console.log("button clicked");
-// }
 
-//worked upto here
+
+
+
+// document.getElementById('selected-pro-img')
+// .addEventListener("click", ()=>{
+//     console.log("image clicked");
+// })
+// document.getElementById('selected-pro-price')
+// .addEventListener("click", ()=>{
+//     console.log("price clicked");
+// })
+// document.getElementById('selected-pro-name')
+// .addEventListener("click", ()=>{
+//     console.log("name clicked");
+// })
+// document.getElementById('selected-pro-des')
+// .addEventListener("click", ()=>{
+//     console.log("des clicked");
+// })

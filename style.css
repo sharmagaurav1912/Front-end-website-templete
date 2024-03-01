@@ -6,7 +6,7 @@
 
         #product{
             position:relative;
-            min-height: 26rem;
+            min-height: 29rem;
             max-height: auto;
             margin-top:1rem;
             transition: hover 0.2s ease-out;
