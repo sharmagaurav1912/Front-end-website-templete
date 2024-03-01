@@ -16,25 +16,35 @@ cartButton.forEach((e) => {
             cartCount.innerText = count;
         } else {
             console.log("login First");
+            // alert('login First');
             window.location.href = "#login"
         }
         
     })
 })
 
+let proName = document.querySelectorAll('#pro-name');
+let proDes = document.querySelectorAll('#pro-des');
+let proPrice = document.querySelectorAll('#pro-price');
+
 let buyButton = document.querySelectorAll('#buy-btn');
 buyButton.forEach((e) => {
     e.addEventListener("click",(n) => {
-
-        e.preventDefault();
-
         if (isUserLogged) {
-            console.log(n.target);
-            setTimeout(() => {
-                window.open('http://127.0.0.1:5500/proPage.html');
-            },2000)
+            console.log(n.target.parentNode);
+
+            window.open('http://127.0.0.1:5500/proPage.html');
+
+            document.querySelector('selected-pro-price')
+            .innerHTML = e.proPrice;
+            document.querySelector('selected-pro-name')
+            .innerHTML = e.proName;
+            document.querySelectorAll('selected-pro-des')
+            .innerHTML = e.proDes;
+
         } else {
             console.log("login First");
+            // alert('login First');
             window.location.href = "#login"
         }
         

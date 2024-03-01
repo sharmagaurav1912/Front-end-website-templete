@@ -6,7 +6,8 @@
 
         #product{
             position:relative;
-            height: 25rem;
+            min-height: 26rem;
+            max-height: auto;
             margin-top:1rem;
             transition: hover 0.2s ease-out;
         }
@@ -56,8 +57,4 @@
             border-radius: 50%;
             right:15px;
         }
-
-.display{
-    display: none;
-}
 
