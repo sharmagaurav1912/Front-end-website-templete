@@ -26,8 +26,13 @@ let buyButton = document.querySelectorAll('#buy-btn');
 buyButton.forEach((e) => {
     e.addEventListener("click",(n) => {
 
+        e.preventDefault();
+
         if (isUserLogged) {
             console.log(n.target);
+            setTimeout(() => {
+                window.open('http://127.0.0.1:5500/proPage.html');
+            },2000)
         } else {
             console.log("login First");
             window.location.href = "#login"
