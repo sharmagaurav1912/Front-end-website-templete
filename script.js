@@ -31,10 +31,19 @@ async function getData() {
             
             proCont.appendChild(product);
             
-        }
-        
-    }
-);
+        }  
+      }
+    );
+
+    let img = document.querySelectorAll('#pro-img');
+    document.querySelectorAll('#product-container').forEach((e) => {
+        e.addEventListener('click', (n) => {
+            // Replace this with the desired action when Buy Now button is clicked
+            console.log(n.target.parentNode.id);
+            Window.location = "http://127.0.0.1:5500/ProductPage.html";
+            console.log("i am here");
+        });
+    });
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // dark mode script
@@ -88,6 +97,8 @@ cartButton.forEach((e) => {
         
     })
 })
+
+
 
 
 
@@ -155,7 +166,7 @@ login.addEventListener("click",() => {
 
     } else {
 
-        window.location = "http://127.0.0.1:5500/Front-end-website-templete/login.html";
+        window.location = "http://127.0.0.1:5500/login.html";
         isUserLogged = true;
         // console.log("login successful");
         // login.innerText = "logout";
