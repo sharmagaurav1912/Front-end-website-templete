@@ -6,14 +6,17 @@
 
         .product{
             position:relative;
-            min-height: 29rem;
+            min-height: 25rem;
             max-height: auto;
             margin-top:1rem;
             transition: hover 0.2s ease-out;
+            padding: 1rem 2rem;
+            /* margin: 4rem 0; */
+            /* border: 1px solid red; */
         }
 
         .product:hover{
-            border-radius:1rem;
+            border-radius:0.5rem;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
@@ -22,26 +25,26 @@
         }
 
         #pro-cont{
-            border-radius:1rem;
+            border-radius:0.5rem;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
         #pro-img{
             width: 100%;
-            border-radius:1rem;
+            border-radius:0.5rem;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
         #buy-btn{
             position: absolute;
             right:1rem ;
-            bottom: 0.5rem;
+            bottom: 1rem;
         }
 
         #cart-btn{
             position: absolute;
             right: 6.5rem;
-            bottom:0.5rem ;
+            bottom:1rem ;
         }
 
         #cart{
@@ -57,4 +60,3 @@
             border-radius: 50%;
             right:15px;
         }
-
