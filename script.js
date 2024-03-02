@@ -8,7 +8,7 @@ async function getData() {
     const data = await response.json();
         // console.log(data);
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i <= 30; i++) {
             let pro = data.products[i];
             // console.log(pro);
             // console.log("load successful");
@@ -21,10 +21,10 @@ async function getData() {
             product.classList.add('col-sm-6');
             product.innerHTML = `
 
-            <img src="box.png" id="pro-img" alt="${pro.title}">
+            <img src="${pro.thumbnail}" id="pro-img" alt="${pro.title}">
             <h5 id="pro-name" class="mt-2">${pro.title}</h5>
             <h6 id="pro-des">${pro.description}</h6>
-            <span id="pro-price">${pro.price}</span><br>
+            <span id="pro-price">₹${pro.price}/-</span><br>
             <button class="border-0 bg-primary rounded text-white px-2 py-1" id="buy-btn">Buy Now</button>
             <button class="border-0 bg-success rounded text-white px-2 py-1" id="cart-btn">Add to Cart</button>`;
 
@@ -32,6 +32,7 @@ async function getData() {
             proCont.appendChild(product);
             
         }
+        
     }
 );
 
@@ -48,18 +49,13 @@ themeImg.addEventListener("click",()=>{
         body.style.color = "white";
         themeImg.src="sun.png";
         lightTheme = false;
-        console.log(lightTheme); 
     }
     
     else{     
         body.style.backgroundColor = "white";
         body.style.color = "black";  
-        console.log("light theme enabled"); 
-        // themeImg.src="crescent-moon.png";
-        // themeImg.style.backgroundColor = "white";
-        // themeImg.style.backgroundColor = "white";
-        lightTheme = true;
-        console.log(lightTheme);  
+        themeImg.src="crescent-moon.png";
+        lightTheme = true; 
     }
 })
 
@@ -158,9 +154,11 @@ login.addEventListener("click",() => {
         cartCount.innerText = count;
 
     } else {
+
+        window.location = "http://127.0.0.1:5500/Front-end-website-templete/login.html";
         isUserLogged = true;
-        console.log("login successful");
-        login.innerText = "logout";
+        // console.log("login successful");
+        // login.innerText = "logout";
     }
     
 })
@@ -184,5 +182,11 @@ cart.addEventListener("click",() => {
     }
     
 })
+
+
+
+
+
+
 
  
