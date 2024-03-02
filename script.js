@@ -41,12 +41,19 @@ async function getData() {
             console.log(n.target.parentNode.id);
 
             if (n.target.parentNode.id !== 'product-container') {
-                window.location = "http://127.0.0.1:5500/ProductPage.html";
                 console.log("i am here");
+                
+                displayContent(n.target.parentNode.id)
             }
             
         });
     });
+    
+    function displayContent(id) {
+        console.log("i am here again");
+        // window.location = "http://127.0.0.1:5500/ProductPage.html";
+        console.log(id);
+    }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // dark mode script
