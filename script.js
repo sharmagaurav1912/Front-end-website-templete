@@ -15,7 +15,7 @@ async function getData() {
             let proCont = document.getElementById("product-container");
             let product = document.createElement('div');
             product.classList.add('product')
-            product.id = 'product-'+i;
+            product.id = i;
             product.classList.add('col-lg-3');
             product.classList.add('col-md-4');
             product.classList.add('col-sm-6');
@@ -35,13 +35,16 @@ async function getData() {
       }
     );
 
-    let img = document.querySelectorAll('#pro-img');
     document.querySelectorAll('#product-container').forEach((e) => {
         e.addEventListener('click', (n) => {
             // Replace this with the desired action when Buy Now button is clicked
             console.log(n.target.parentNode.id);
-            Window.location = "http://127.0.0.1:5500/ProductPage.html";
-            console.log("i am here");
+
+            if (n.target.parentNode.id !== 'product-container') {
+                window.location = "http://127.0.0.1:5500/ProductPage.html";
+                console.log("i am here");
+            }
+            
         });
     });
 
