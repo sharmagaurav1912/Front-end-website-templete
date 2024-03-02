@@ -4,7 +4,7 @@
             scroll-behavior: smooth;
         }
 
-        #product{
+        .product{
             position:relative;
             min-height: 29rem;
             max-height: auto;
@@ -12,12 +12,12 @@
             transition: hover 0.2s ease-out;
         }
 
-        #product:hover{
+        .product:hover{
             border-radius:1rem;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
-        #product:hover #pro-img{
+        .product:hover #pro-img{
             box-shadow: none;
         }
 

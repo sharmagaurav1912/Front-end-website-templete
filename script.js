@@ -63,17 +63,39 @@ let proImg = document.querySelectorAll('#pro-img');
 proImg.forEach((e) => {
     e.addEventListener("click",(n) => {
 
-        var proImg = n.target.parentNode.childNodes[1].src;
-        var proName = n.target.parentNode.childNodes[3].innerText;
-        var proDescription = n.target.parentNode.childNodes[5].innerText;
-        var proPrice = n.target.parentNode.childNodes[7].innerText;
-        
-            console.log(proImg);
-            console.log(proName);
-            console.log(proDescription);
-            console.log(proPrice);
+        var productID = n.target.parentNode.id;
+        console.log(productID);
+        getData(productID)
 
-            window.location = './ProductPage.html';
+        // fetch('https://dummyjson.com/products')
+        // .then(res => res.json())
+        // .then( console.log(res.products[1]));
+
+        // async function getData(proID) {
+        //     const response = await fetch('https://dummyjson.com/products');
+        //     const data = await response.json();
+        //     console.log(data);
+        // }
+
+        async function getData(productID) {
+            const response = await fetch('https://dummyjson.com/products');
+            const product = await response.json();
+
+            var selectedProduct = product.products[productID];
+            console.log(selectedProduct);
+        }
+
+        // var proImg = n.target.parentNode.childNodes[1].src;
+        // var proName = n.target.parentNode.childNodes[3].innerText;
+        // var proDescription = n.target.parentNode.childNodes[5].innerText;
+        // var proPrice = n.target.parentNode.childNodes[7].innerText;
+        
+            // console.log(proImg);
+            // console.log(proName);
+            // console.log(proDescription);
+            // console.log(proPrice);
+
+            // window.location = './ProductPage.html';
             
             // document.getElementById('selected-pro-img').src = img;
             // document.getElementById('selected-pro-price').innerText = price;
