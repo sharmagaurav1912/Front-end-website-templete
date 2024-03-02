@@ -1,3 +1,7 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// product loading script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 document.addEventListener('DOMContentLoaded',
 async function getData() {
     const response = await fetch('https://dummyjson.com/products');
@@ -30,6 +34,38 @@ async function getData() {
         }
     }
 );
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// dark mode script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+let lightTheme = true;
+let themeImg = document.getElementById('theme-img');
+themeImg.addEventListener("click",()=>{   
+    let body = document.querySelector('body');
+
+    if (lightTheme) {
+        body.style.backgroundColor = "black";
+        body.style.color = "white";
+        themeImg.src="sun.png";
+        lightTheme = false;
+        console.log(lightTheme); 
+    }
+    
+    else{     
+        body.style.backgroundColor = "white";
+        body.style.color = "black";  
+        console.log("light theme enabled"); 
+        // themeImg.src="crescent-moon.png";
+        // themeImg.style.backgroundColor = "white";
+        // themeImg.style.backgroundColor = "white";
+        lightTheme = true;
+        console.log(lightTheme);  
+    }
+})
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // cart script
