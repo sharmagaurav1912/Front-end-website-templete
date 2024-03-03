@@ -35,24 +35,60 @@ async function getData() {
       }
     );
 
+    let isUserLogged = false;
+    let count = 0;
+
+    let cartCount = document.getElementById('cart-count');
+    cartCount.innerText = count;
+
+
     document.querySelectorAll('#product-container').forEach((e) => {
         e.addEventListener('click', (n) => {
             // Replace this with the desired action when Buy Now button is clicked
-            console.log(n.target.parentNode.id);
+            // console.log(n.target.parentNode.id);
 
-            if (n.target.parentNode.id !== 'product-container') {
-                console.log("i am here");
-                
-                displayContent(n.target.parentNode.id)
+            if (n.target.id == 'buy-btn') {
+
+                console.log("buy button clicked");
+                // displayContent(n.target.parentNode.id)
+
+                if (isUserLogged) {
+                    console.log(n.target.parentNode);
+                    // window.open('http://127.0.0.1:5500/proPage.html');
+                    console.log("wait...");
+        
+                } else {
+                    console.log("login First");
+                    // alert('login First');
+                    window.location.href = "#login"
+                }
+
+            }else if (n.target.id == 'cart-btn') {
+
+                console.log("cart button clicked");
+
+                if (isUserLogged) {
+                    console.log(n.target);
+                    count ++;
+                    cartCount.innerText = count;
+                } else {
+                    console.log("login First");
+                    window.location.href = "#login"
+                }
+
+            }else if (n.target.id == 'pro-img') {
+
+                console.log("image is clicked");
+                displayContent(n.target.parentNode.id);
             }
             
         });
     });
     
-    function displayContent(id) {
-        console.log("i am here again");
+    export function displayContent(id) {
+        console.log("i am here again with",id);
         // window.location = "http://127.0.0.1:5500/ProductPage.html";
-        console.log(id);
+        // console.log(id);
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -78,87 +114,6 @@ themeImg.addEventListener("click",()=>{
     }
 })
 
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// cart script
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-let isUserLogged = false;
-let count = 0;
-
-let cartCount = document.getElementById('cart-count');
-cartCount.innerText = count;
-
-let cartButton = document.querySelectorAll('#cart-btn');
-cartButton.forEach((e) => {
-    e.addEventListener("click",(n) => {
-
-        if (isUserLogged) {
-            console.log(n.target);
-            count ++;
-            cartCount.innerText = count;
-        } else {
-            console.log("login First");
-            window.location.href = "#login"
-        }
-        
-    })
-})
-
-
-
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// buy button script
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-let buyButton = document.querySelectorAll('#buy-btn');
-buyButton.forEach((e) => {
-    e.addEventListener("click",(n) => {
-
-        if (isUserLogged) {
-            console.log(n.target.parentNode);
-            // window.open('http://127.0.0.1:5500/proPage.html');
-
-        } else {
-            console.log("login First");
-            // alert('login First');
-            window.location.href = "#login"
-        }
-        
-    })
-})
-
-
-
-
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// product page script
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-let proImg = document.querySelectorAll('#pro-img');
-proImg.forEach((e) => {
-    e.addEventListener("click",(n) => {
-
-        var productID = n.target.parentNode.id;
-        console.log(productID);
-        })
-    })
-
-
-
-
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //login button script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -176,17 +131,13 @@ login.addEventListener("click",() => {
 
     } else {
 
-        window.location = "http://127.0.0.1:5500/login.html";
+        // window.location = "http://127.0.0.1:5500/login.html";
         isUserLogged = true;
-        // console.log("login successful");
-        // login.innerText = "logout";
+        console.log("login successful");
+        login.innerText = "logout";
     }
     
 })
-
-
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //cart button script
@@ -203,8 +154,6 @@ cart.addEventListener("click",() => {
     }
     
 })
-
-
 
 
 

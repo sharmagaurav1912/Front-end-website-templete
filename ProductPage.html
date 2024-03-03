@@ -12,25 +12,44 @@
     
 </head>
 <body>
+
+    <nav class="navbar my-2">
+        <h1 class="display-6 mx-5">Gaurv sharma</h1>
+        <div class="user mx-4">
+            <img src="crescent-moon.png" alt="Mode" id="theme-img">
+            <button class="border-0 bg-dark text-light rounded px-4 py-1" id="login">Login</button>
+            <button class="border-0 bg-dark text-light rounded px-5 py-1" id="cart">cart<span id="cart-count"></span></button>
+        </div>
+    </nav>
     
-    <div class="container my-5">
+    <div class="container my-4">
         <div class="row bg-light" id="pro-cont">
             <div class="col-md-5 py-5 px-5 bg-success">
-                <img id="selected-pro-img" src="check.png" class="w-100 mb-3">
-                <span class="display-6 text-white mx-5" id="selected-pro-price">Price</span>
+                <img id="selected-pro-img" src="box.png" class="w-100 mb-3">
             </div>
             <div class="col-md-7 py-5 px-5">
                 <h1 id="selected-pro-name">Heading</h1>
-                <p id="selected-pro-des">Paragraph</p>
-                <button class="border-0 bg-primary rounded text-white px-2 py-1 w-25 mt-3">Buy Now</button>
+                <span>Company name</span>
+                <br>
+                <span class="mx-2">Stock</span><span class="mx-2" >Rating</span>
+                <p id="selected-pro-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque hic modi blanditiis a quis neque, molestias ipsa totam, enim earum sint maiores maxime debitis cupiditate quibusdam quod suscipit repellat placeat mollitia facere aliquid assumenda commodi expedita. Possimus voluptatibus qui quae cumque magnam ab, accusantium enim vitae suscipit dicta eveniet cum!</p>
+                <span class="display-6 mx-5" id="selected-pro-price">Price</span><br>
+                <span>Delivery in 5 days</span>
+                <br>
+                <button class="border-0 bg-primary rounded text-white px-2 py-1 w-25 mt-3" id="buy-now-btn" >Buy Now</button>
             </div>
         </div>
     </div>
     
-    <!-- <script src="script.js"></script> -->
-    <!-- <script src="script2.js"></script> -->
-    <!-- <script src="script3.js"></script> -->
+    <script src="script3.js"></script>
     <script src='bootstrap.bundle.min.js'></script>
+
+    <!-- <script>
+        document.getElementById('buy-now-btn')
+.addEventListener("click",()=>{
+    console.log("clicked");
+})
+    </script> -->
     
 </body>
 </html>

@@ -16,7 +16,7 @@
 
         .product{
             position:relative;
-            min-height: 32rem;
+            min-height: 30rem;
             max-height: auto;
             margin-top:1rem;
             transition: hover 0.2s ease-out;
@@ -84,4 +84,31 @@
     border: 2px solid green;
     margin: 2rem auto;
     padding: 2rem 3rem;
+}
+
+@media screen and (max-width: 1200px){
+
+    #pro-name{
+        font-size: 1rem;
+    }
+    #pro-des{
+        font-size: 0.8rem;
+    }
+    /* #buy-btn{
+        bottom: 0.1rem;
+    }
+
+    #cart-btn{
+        bottom:0.1rem ;
+    } */
+    #pro-img{
+        height: 15rem;
+    }
+    /* .product{
+        min-height: 32rem;
+    } */
+}
+
+#theme-img{
+    cursor: pointer;
 }

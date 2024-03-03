@@ -108,3 +108,71 @@ just data need to be changed.
 // .addEventListener("click", ()=>{
 //     console.log("des clicked");
 // })
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// cart script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let isUserLogged = false;
+let count = 0;
+
+let cartCount = document.getElementById('cart-count');
+cartCount.innerText = count;
+
+let cartButton = document.querySelectorAll('#cart-btn');
+cartButton.forEach((e) => {
+    e.addEventListener("click",(n) => {
+
+        if (isUserLogged) {
+            console.log(n.target);
+            count ++;
+            cartCount.innerText = count;
+        } else {
+            console.log("login First");
+            window.location.href = "#login"
+        }
+        
+    })
+})
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// product page script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let proImg = document.querySelectorAll('#pro-img');
+proImg.forEach((e) => {
+    e.addEventListener("click",(n) => {
+
+        var productID = n.target.parentNode.id;
+        console.log(productID);
+        })
+    })
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// buy button script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let buyButton = document.querySelectorAll('#buy-btn');
+buyButton.forEach((e) => {
+    e.addEventListener("click",(n) => {
+
+        if (isUserLogged) {
+            console.log(n.target.parentNode);
+            // window.open('http://127.0.0.1:5500/proPage.html');
+
+        } else {
+            console.log("login First");
+            // alert('login First');
+            window.location.href = "#login"
+        }
+        
+    })
+})
