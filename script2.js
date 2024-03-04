@@ -12,7 +12,7 @@ loginButton.addEventListener("click",() => {
         console.log("type something");
     } else {
         console.log("okay");
-        window.location = "http://127.0.0.1:5500/index.html";   
+        window.location.href = "./index.html"; 
     }
 })
 
@@ -22,3 +22,13 @@ document.querySelectorAll('#pro-img')
         console.log(n.target);
     })
 })
+
+
+
+
+
+
+
+
+
+

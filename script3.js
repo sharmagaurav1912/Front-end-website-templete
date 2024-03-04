@@ -1,11 +1,8 @@
-document.getElementById('buy-now-btn')
-.addEventListener("click",()=>{
-    console.log("clicked");
-})
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // dark mode script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 let productPage = document.getElementById('product-page');
 let lightTheme = true;
 let themeImg = document.getElementById('theme-img');
@@ -15,10 +12,13 @@ themeImg.addEventListener("click",()=>{
     if (lightTheme) {
         body.style.backgroundColor = "black";
         body.style.color = "white";
-        // productPage.style.backgroundColor = "black";
-        // productPage.style.color = "white";
         themeImg.src="sun.png";
         lightTheme = false;
+
+        document.getElementById('product-page')
+        .classList.add('bg-dark')
+        document.getElementById('product-page')
+        .classList.add('text-white')
     }
     
     else{     
@@ -28,8 +28,18 @@ themeImg.addEventListener("click",()=>{
         // productPage.style.color = "black";
         themeImg.src="crescent-moon.png";
         lightTheme = true; 
+
+        document.getElementById('product-page')
+        .classList.remove('bg-dark')
+        document.getElementById('product-page')
+        .classList.remove('text-white')
     }
 })
+
+// document.getElementById('buy-now-btn')
+// .addEventListener("click",()=>{
+//     console.log("clicked");
+// })
 
 
 

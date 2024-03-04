@@ -1,3 +1,4 @@
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // product loading script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -44,19 +45,13 @@ async function getData() {
 
     document.querySelectorAll('#product-container').forEach((e) => {
         e.addEventListener('click', (n) => {
-            // Replace this with the desired action when Buy Now button is clicked
-            // console.log(n.target.parentNode.id);
+
+            // console.log(n.target);
 
             if (n.target.id == 'buy-btn') {
-
                 console.log("buy button clicked");
-                // displayContent(n.target.parentNode.id)
-
                 if (isUserLogged) {
-                    console.log(n.target.parentNode);
-                    // window.open('http://127.0.0.1:5500/proPage.html');
-                    console.log("wait...");
-        
+                    console.log("wait.. opening buy now page");
                 } else {
                     console.log("login First");
                     // alert('login First');
@@ -64,12 +59,11 @@ async function getData() {
                 }
 
             }else if (n.target.id == 'cart-btn') {
-
                 console.log("cart button clicked");
-
                 if (isUserLogged) {
-                    console.log(n.target);
+                    // console.log(n.target);
                     count ++;
+                    console.log("cart count incremented");
                     cartCount.innerText = count;
                 } else {
                     console.log("login First");
@@ -77,7 +71,6 @@ async function getData() {
                 }
 
             }else if (n.target.id == 'pro-img') {
-
                 console.log("image is clicked");
                 displayContent(n.target.parentNode.id);
             }
@@ -85,9 +78,9 @@ async function getData() {
         });
     });
     
-    export function displayContent(id) {
+    function displayContent(id) {
         console.log("i am here again with",id);
-        // window.location = "http://127.0.0.1:5500/ProductPage.html";
+        window.location.href = "./ProductPage.html";
         // console.log(id);
     }
 
@@ -131,10 +124,12 @@ login.addEventListener("click",() => {
 
     } else {
 
-        // window.location = "http://127.0.0.1:5500/login.html";
+        window.location.href = "./login.html";
         isUserLogged = true;
         console.log("login successful");
-        login.innerText = "logout";
+        setTimeout(() => {
+            login.innerText = "logout";
+        },2000);
     }
     
 })
@@ -155,8 +150,3 @@ cart.addEventListener("click",() => {
     
 })
 
-
-
-
-
- 
