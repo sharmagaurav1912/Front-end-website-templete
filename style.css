@@ -1,8 +1,6 @@
-
-
-        *{
-            scroll-behavior: smooth;
-        }
+*{
+    scroll-behavior: smooth;
+    }
 
         #theme-img{
             width: 2rem;
@@ -16,7 +14,7 @@
 
         .product{
             position:relative;
-            min-height: 30rem;
+            min-height: 32rem;
             max-height: auto;
             margin-top:1rem;
             transition: hover 0.2s ease-out;
@@ -47,7 +45,11 @@
         }
 
         #pro-price{
-            font-size: 1.2rem;
+            font-size: 1rem;
+        }
+
+        #pro-des{
+            font-size: 0.9rem;
         }
 
         #buy-btn{

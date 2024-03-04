@@ -24,6 +24,10 @@ document.querySelectorAll('#pro-img')
 })
 
 
+document.getElementById('buy-now-btn')
+.addEventListener("click", () => {
+    console.log('clicked');
+})
 
 
 
