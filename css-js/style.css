@@ -113,3 +113,8 @@
 #theme-img{
     cursor: pointer;
 }
+
+#selected-pro-img{
+    height: 25rem;
+    object-fit: cover;
+}

@@ -80,8 +80,10 @@ async function getData() {
     
     function displayContent(id) {
         console.log("i am here again with",id);
+        console.log(id);
+        
+        localStorage.setItem('product-id',id);
         window.location.href = "./ProductPage.html";
-        // console.log(id);
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

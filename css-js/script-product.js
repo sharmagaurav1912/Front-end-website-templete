@@ -1,3 +1,75 @@
+document.addEventListener('DOMContentLoaded',
+async function fetchData() {
+    const response = await fetch('https://dummyjson.com/products');
+    const data = await response.json();
+        // console.log(data);
+
+            var productID = localStorage.getItem('product-id')
+            let pro = data.products[productID];
+            console.log(pro);
+            console.log(productID);
+            console.log("load successful");
+
+            document.getElementById('selected-pro-img')
+            .src = pro.thumbnail;
+
+            document.getElementById('selected-pro-name')
+            .innerText = pro.title;
+
+            document.getElementById('selected-pro-des')
+            .innerText = pro.description;
+
+            document.getElementById('selected-pro-price')
+            .innerText = "₹ " + pro.price;
+            
+            document.getElementById('selected-pro-brand')
+            .innerText = pro.brand;
+
+            document.getElementById('selected-pro-category')
+            .innerText = pro.category;
+
+            document.getElementById('selected-pro-rating')
+            .innerText = pro.rating;
+
+            document.getElementById('selected-pro-stock')
+            .innerText = "Stock : " + pro.stock;
+    
+
+            
+        }  
+    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // dark mode script
