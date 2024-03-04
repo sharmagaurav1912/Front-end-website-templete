@@ -1,0 +1,115 @@
+*{
+    scroll-behavior: smooth;
+    }
+
+        #theme-img{
+            width: 2rem;
+            margin: 0 1rem;
+        }
+
+        #product-container{
+            min-height: 600px;
+            max-height: auto;
+        }
+
+        .product{
+            position:relative;
+            min-height: 32rem;
+            max-height: auto;
+            margin-top:1rem;
+            transition: hover 0.2s ease-out;
+            padding: 1rem 2rem;
+            /* margin: 4rem 0; */
+            border: 2px solid white;
+        }
+
+        .product:hover{
+            border-radius:0.5rem;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .product:hover #pro-img{
+            box-shadow: none;
+        }
+
+        #pro-cont{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #pro-img{
+            width: 100%;
+            height: 18rem;
+            object-fit: cover;
+            border-radius:0.5rem;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #pro-price{
+            font-size: 1rem;
+        }
+
+        #pro-des{
+            font-size: 0.9rem;
+        }
+
+        #buy-btn{
+            position: absolute;
+            right:1rem ;
+            bottom: 1rem;
+        }
+
+        #cart-btn{
+            position: absolute;
+            right: 6.5rem;
+            bottom:1rem ;
+        }
+
+        #cart{
+            position: relative;
+        }
+
+        #cart-count{
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            right:15px;
+        }
+
+
+
+.login-card{
+    width:50%;
+    border: 2px solid green;
+    margin: 2rem auto;
+    padding: 2rem 3rem;
+}
+
+@media screen and (max-width: 1200px){
+
+    #pro-name{
+        font-size: 1rem;
+    }
+    #pro-des{
+        font-size: 0.8rem;
+    }
+    /* #buy-btn{
+        bottom: 0.1rem;
+    }
+
+    #cart-btn{
+        bottom:0.1rem ;
+    } */
+    #pro-img{
+        height: 15rem;
+    }
+    /* .product{
+        min-height: 32rem;
+    } */
+}
+
+#theme-img{
+    cursor: pointer;
+}

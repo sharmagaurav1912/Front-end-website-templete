@@ -12,7 +12,7 @@ themeImg.addEventListener("click",()=>{
     if (lightTheme) {
         body.style.backgroundColor = "black";
         body.style.color = "white";
-        themeImg.src="sun.png";
+        themeImg.src="img/sun.png";
         lightTheme = false;
 
         document.getElementById('product-page')
@@ -26,7 +26,7 @@ themeImg.addEventListener("click",()=>{
         body.style.color = "black";  
         // productPage.style.backgroundColor = "white";
         // productPage.style.color = "black";
-        themeImg.src="crescent-moon.png";
+        themeImg.src="img/crescent-moon.png";
         lightTheme = true; 
 
         document.getElementById('product-page')
