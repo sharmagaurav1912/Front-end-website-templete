@@ -118,3 +118,11 @@
     height: 25rem;
     object-fit: cover;
 }
+
+#cart-pro-img{
+    width: 3rem;
+}
+
+#cart-product{
+    margin: 0 0.2rem;
+}
