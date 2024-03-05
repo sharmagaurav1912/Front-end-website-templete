@@ -36,6 +36,14 @@ async function getData() {
       }
     );
 
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// product Clicking script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
     let isUserLogged = false;
     let count = 0;
 
@@ -51,40 +59,92 @@ async function getData() {
             if (n.target.id == 'buy-btn') {
                 console.log("buy button clicked");
                 if (isUserLogged) {
-                    console.log("wait.. opening buy now page");
+                    // console.log("wait.. opening buy now page");
+                    window.location.href = "./checkout.html"
                 } else {
                     console.log("login First");
                     // alert('login First');
-                    window.location.href = "#login"
+                    window.location.href = "./login.html"
                 }
 
             }else if (n.target.id == 'cart-btn') {
                 console.log("cart button clicked");
                 if (isUserLogged) {
-                    // console.log(n.target);
+                    // console.log(n.target.parentNode.id);
                     count ++;
-                    console.log("cart count incremented");
                     cartCount.innerText = count;
+                    console.log("cart count incremented");
+
+                    id = n.target.parentNode.id;
+                    localStorage.setItem('product-id',id);
+                    window.location.href = "./cart.html"
+
                 } else {
                     console.log("login First");
-                    window.location.href = "#login"
+                    window.location.href = "./login.html"
                 }
 
             }else if (n.target.id == 'pro-img') {
                 console.log("image is clicked");
-                displayContent(n.target.parentNode.id);
+                displayProduct(n.target.parentNode.id);
             }
             
         });
     });
     
-    function displayContent(id) {
+    function displayProduct(id) {
         console.log("i am here again with",id);
         console.log(id);
         
         localStorage.setItem('product-id',id);
         window.location.href = "./ProductPage.html";
     }
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//login button script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let login = document.getElementById('login');
+login.addEventListener("click",() => {
+
+    if (isUserLogged) {
+        login.innerText = "login";
+        console.log("logout successful");
+        // cartCount.classList.remove('display');
+        isUserLogged = false;
+        count = 0;
+        cartCount.innerText = count;
+
+    } else {
+
+        // window.location.href = "./login.html";
+        isUserLogged = true;
+        console.log("login successful");
+        setTimeout(() => {
+            login.innerText = "logout";
+        },2000);
+    }
+    
+})
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//cart button script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let cart = document.getElementById('cart');
+cart.addEventListener("click",() => {
+    
+    if (isUserLogged) {
+        console.log("cart button clicked");
+        window.location.href = "./cart.html";
+
+    } else {
+        console.log("login first");
+    }
+    
+})
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // dark mode script
@@ -107,48 +167,5 @@ themeImg.addEventListener("click",()=>{
         themeImg.src="img/crescent-moon.png";
         lightTheme = true; 
     }
-})
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//login button script
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-let login = document.getElementById('login');
-login.addEventListener("click",() => {
-
-    if (isUserLogged) {
-        login.innerText = "login";
-        console.log("logout successful");
-        // cartCount.classList.remove('display');
-        isUserLogged = false;
-        count = 0;
-        cartCount.innerText = count;
-
-    } else {
-
-        window.location.href = "./login.html";
-        isUserLogged = true;
-        console.log("login successful");
-        setTimeout(() => {
-            login.innerText = "logout";
-        },2000);
-    }
-    
-})
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//cart button script
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-let cart = document.getElementById('cart');
-cart.addEventListener("click",() => {
-    
-    if (isUserLogged) {
-        console.log("cart button clicked");
-
-    } else {
-        console.log("login first");
-    }
-    
 })
 
