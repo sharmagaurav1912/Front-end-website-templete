@@ -17,21 +17,21 @@ async function getData() {
             product.id = "cart-product";
             product.innerHTML = `
 
-            <div class="col-lg-1 col-sm-4">
+            <div class="col-lg-1 col-sm-4 border">
                 <img src="${pro.thumbnail}" alt="" id="cart-pro-img">
             </div>
-            <div class="col-lg-5 col-sm-8 py-2">
+            <div class="col-lg-5 col-sm-8 py-2 border">
                 <span id="cart-product-name">${pro.title}</span>
                 <br>
                 <span id="cart-product-des">${pro.description}</span>
             </div>
-            <div class="col-lg-2 col-sm-4 py-2">
+            <div class="col-lg-2 col-sm-4 py-2 border">
                 <span id="cart-product-price">₹${pro.price}/-</span>
             </div>
-            <div class="col-lg-2 col-sm-4 py-2">
+            <div class="col-lg-2 col-sm-4 py-2 border">
                 <input type="number" id="cart-pro-quantity" value="1" class="w-100">
             </div>
-            <div class="col-lg-2 col-sm-4 py-2">
+            <div class="col-lg-2 col-sm-4 py-2 border">
                 <span id="cart-product-total">Total</span>
             </div>
             
