@@ -31,8 +31,3 @@ document.getElementById('buy-now-btn')
 
 
 
-
-
-
-
-
