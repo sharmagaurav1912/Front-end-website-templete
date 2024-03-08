@@ -50,7 +50,6 @@ async function getData() {
     let cartCount = document.getElementById('cart-count');
     cartCount.innerText = count;
 
-
     document.querySelectorAll('#product-container').forEach((e) => {
         e.addEventListener('click', (n) => {
 
@@ -119,7 +118,7 @@ login.addEventListener("click",() => {
 
     } else {
 
-        // window.location.href = "./login.html";
+        window.location.href = "./login.html";
         isUserLogged = true;
         console.log("login successful");
         setTimeout(() => {
@@ -142,6 +141,7 @@ cart.addEventListener("click",() => {
 
     } else {
         console.log("login first");
+        window.location.href = "./login.html";
     }
     
 })
@@ -159,6 +159,8 @@ themeImg.addEventListener("click",()=>{
         body.style.color = "white";
         themeImg.src="img/sun.png";
         lightTheme = false;
+        
+        
     }
     
     else{     
@@ -166,6 +168,6 @@ themeImg.addEventListener("click",()=>{
         body.style.color = "black";  
         themeImg.src="img/crescent-moon.png";
         lightTheme = true; 
+        
     }
 })
-
