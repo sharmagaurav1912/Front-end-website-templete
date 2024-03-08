@@ -16,29 +16,20 @@ async function fetchData() {
 
             document.getElementById('selected-pro-img')
             .src = pro.thumbnail;
-
             document.getElementById('selected-pro-name')
             .innerText = pro.title;
-
             document.getElementById('selected-pro-des')
             .innerText = pro.description;
-
             document.getElementById('selected-pro-price')
-            .innerText = "₹ " + pro.price;
-            
+            .innerText = "₹ " + pro.price + "/-";
             document.getElementById('selected-pro-brand')
             .innerText = pro.brand;
-
             document.getElementById('selected-pro-category')
             .innerText = pro.category;
-
             document.getElementById('selected-pro-rating')
             .innerText = pro.rating;
-
             document.getElementById('selected-pro-stock')
             .innerText = "Stock : " + pro.stock;
-    
-
             
         }  
     );
@@ -46,6 +37,7 @@ async function fetchData() {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // dark mode script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// var activeTheme = localStorage.getItem('theme-preference');
 
 let productPage = document.getElementById('product-page');
 let lightTheme = true;
@@ -63,6 +55,7 @@ themeImg.addEventListener("click",()=>{
         .classList.add('bg-dark')
         document.getElementById('product-page')
         .classList.add('text-white')
+        
     }
     
     else{     
@@ -79,7 +72,3 @@ themeImg.addEventListener("click",()=>{
         .classList.remove('text-white')
     }
 })
-
-
-
-
