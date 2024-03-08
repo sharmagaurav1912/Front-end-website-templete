@@ -112,8 +112,3 @@ themeImg.addEventListener("click",()=>{
         // .classList.remove('text-white');
     }
 })
-
-
-
-
-// worked
