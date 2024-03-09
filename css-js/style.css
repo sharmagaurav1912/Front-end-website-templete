@@ -126,15 +126,14 @@
     /* margin: 1rem 0; */
 }
 
-#cart-product{
-    margin: 0.5rem 0.2rem;
-}
-
 #cart-product-name{
     font-weight: bold;
 }
 
 
+#grand-total{
+    font-weight: bold;
+}
 
 @media screen and (max-width: 580px){
 
@@ -144,6 +143,9 @@
 
     #cart-product{
         font-size: 12px;
+    }
+    #cart-total{
+        font-size: 10px;
     }
 
     #cart-pro-img{
@@ -162,5 +164,13 @@
 
     .cart-div:nth-child(5){
         width: 33%;
+    }
+}
+
+@media screen and (min-width: 580px) and (max-width:1200px){
+    #cart-pro-img{
+        width: 10rem;
+        height: 10rem;
+        object-fit: contain;
     }
 }
