@@ -36,7 +36,7 @@ async function getData() {
                 <input type="number" id="cart-pro-quantity" value="1" class="w-100">
             </div>
             <div class="col-lg-2 col-md-4 col-sm-4 py-2">
-                <span id="cart-product-total">Total</span>
+                <span id="cart-pro-total">Total</span>
             </div>
             
             `;
@@ -47,7 +47,7 @@ async function getData() {
             // console.log(pro.price);
             
             let proQuantity = document.getElementById('cart-pro-quantity');
-            let proTotal = document.getElementById('cart-product-total');
+            let proTotal = document.getElementById('cart-pro-total');
     
             proTotal.innerText = `₹ ${pro.price} /-`;
             // proTotal.innerText = `₹${proQuantity.value * pro.price}/-`;
