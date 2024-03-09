@@ -14,7 +14,6 @@ loginButton.addEventListener("click",() => {
         .innerText = "Type Something";
     } else {
         console.log("okay");
-
         isUserLogged = true;
         localStorage.setItem('isUserLogged',isUserLogged);
         var redirectLocation = localStorage.getItem('location');

@@ -1,15 +1,12 @@
-
+isUserLogged = true;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // product loading script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded',
 async function fetchData(e) {
-
     e.preventDefault;
-    
     const response = await fetch('https://dummyjson.com/products');
     const data = await response.json();
-        // console.log(data);
 
             var productID = localStorage.getItem('product-id')
             let pro = data.products[productID];
@@ -33,6 +30,36 @@ async function fetchData(e) {
             .innerText = pro.rating;
             document.getElementById('selected-pro-stock')
             .innerText = "Stock : " + pro.stock;
+
+            document.getElementById('pro-cont')
+            .addEventListener("click", (n) => {
+                if (n.target.id == "cart-btn-buy") {
+                    console.log("buy button clicked");
+                    if (isUserLogged) {
+                        localStorage.setItem('product-id',productID);
+                        localStorage.setItem('product-json',pro);
+                        window.location.href = './checkout.html';
+                        
+                    } else {
+                        console.log("login First");
+                        window.location.href = './login.html';
+                    }
+                }
+                else if(n.target.id === "cart-btn-cart") {
+                    console.log("cart button clicked");
+                    if (isUserLogged) {
+                        localStorage.setItem('product-id',productID);
+                        localStorage.setItem('product-json',pro);
+                        window.location.href = './cart.html';
+                        
+                    } else {
+                        console.log("login First");
+                        window.location.href = './login.html';
+                    }
+                }
+
+                
+            })
             
         }  
     );
@@ -75,52 +102,54 @@ themeImg.addEventListener("click",()=>{
     }
 })
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// buy button script
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// // buy button script
+// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-var isUserLogged = localStorage.getItem('isUserLogged');
+// var isUserLogged = localStorage.getItem('isUserLogged');
 
-document.getElementById('cart-btn-buy')
-.addEventListener("click", () => {
-    console.log(" buy button clicked");
+// document.getElementById('cart-btn-buy')
+// .addEventListener("click", () => {
+//     console.log(" buy button clicked");
 
-    if (isUserLogged) {
-        // console.log("wait.. opening buy now page");
-        window.location.href = "./checkout.html";
-        // console.log(window.location);
-    } else {
-        console.log("login First");
-        // alert('login First');
-        // console.log(window.location);
-        localStorage.setItem('location',window.location);
-        window.location.href = "./login.html";
-    }
-})
+//     if (isUserLogged) {
+//         // console.log("wait.. opening buy now page");
+//         window.location.href = "./checkout.html";
+//         // console.log(window.location);
+//     } else {
+//         console.log("login First");
+//         // alert('login First');
+//         // console.log(window.location);
+//         localStorage.setItem('location',window.location);
+//         window.location.href = "./login.html";
+//     }
+// })
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// cart button script
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// // cart button script
+// ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-document.getElementById('cart-btn-cart')
-.addEventListener("click", (n) => {
-    console.log(" cart button clicked");
+// document.getElementById('cart-btn-cart')
+// .addEventListener("click", (n) => {
+//     console.log(" cart button clicked");
 
-    if (isUserLogged) {
-        // console.log(n.target.parentNode.id);
-        // count ++;
-        // cartCount.innerText = count;
-        // console.log("cart count incremented");
+//     if (isUserLogged) {
+//         // console.log(n.target.parentNode.id);
+//         // count ++;
+//         // cartCount.innerText = count;
+//         // console.log("cart count incremented");
 
-        id = n.target.parentNode.id;
-        localStorage.setItem('product-id',id);
-        window.location.href = "./cart.html";
-        // console.log(window.location);
+//         console.log(pro);
 
-    } else {
-        console.log("login First");
-        // console.log(window.location);
-        localStorage.setItem('location',window.location);
-        window.location.href = "./login.html";
-    }
-})
+//         // id = n.target.parentNode.id;
+//         // localStorage.setItem('product-id',id);
+//         // window.location.href = "./cart.html";
+//         // console.log(window.location);
+
+//     } else {
+//         // console.log("login First");
+//         // // console.log(window.location);
+//         // localStorage.setItem('location',window.location);
+//         // window.location.href = "./login.html";
+//     }
+// })

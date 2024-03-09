@@ -2,7 +2,7 @@
 // product loading script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 let totalAmount = 0;
-let tax = 5;
+let tax = 2;
 let grandTotal = 0;
 
 document.addEventListener('DOMContentLoaded',
@@ -48,7 +48,7 @@ async function getData(e) {
             </div>
             `;
             proCont.appendChild(product);
-
+            
             totalAmount += pro.price;
             payableTax = totalAmount/100*tax;
             grandTotal = totalAmount + payableTax;
@@ -80,11 +80,6 @@ themeImg.addEventListener("click",()=>{
         themeImg.src="img/sun.png";
         lightTheme = false;
 
-        // document.getElementById('cart-nav')
-        // .classList.add('bg-dark');
-        // document.getElementById('cart-nav')
-        // .classList.add('text-white');
-
         document.getElementById('cart-product')
         .classList.remove('bg-light');
 
@@ -97,11 +92,6 @@ themeImg.addEventListener("click",()=>{
         .classList.add('bg-dark');
         document.getElementById('cart-total')
         .classList.add('text-white');
-
-        // document.querySelector('#cart-nav','#cart-product','#cart-total')
-        // .classList.add('bg-dark');
-        // document.querySelector('#cart-nav','#cart-product','#cart-total')
-        // .classList.add('text-white');
     }
     
     else{     
@@ -109,11 +99,6 @@ themeImg.addEventListener("click",()=>{
         body.style.color = "black";  
         themeImg.src="img/crescent-moon.png";
         lightTheme = true; 
-
-        // document.getElementById('cart-nav')
-        // .classList.remove('bg-dark');
-        // document.getElementById('cart-nav')
-        // .classList.remove('text-white');
 
         document.getElementById('cart-product')
         .classList.add('bg-light');
@@ -127,10 +112,5 @@ themeImg.addEventListener("click",()=>{
         .classList.remove('bg-dark');
         document.getElementById('cart-total')
         .classList.remove('text-white');
-
-        // document.querySelector('#cart-nav','#cart-product','#cart-total')
-        // .classList.remove('bg-dark');
-        // document.querySelector('#cart-nav','#cart-product','#cart-total')
-        // .classList.remove('text-white');
     }
 })

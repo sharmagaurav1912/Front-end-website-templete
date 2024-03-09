@@ -119,6 +119,11 @@
     object-fit: cover;
 }
 
+#cart-pro-container{
+    min-height: 300px;
+    max-height: fit-content;
+}
+
 #cart-pro-img{
     width: 100%;
     height: 5rem;

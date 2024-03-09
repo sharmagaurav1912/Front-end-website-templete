@@ -205,7 +205,25 @@ document.querySelectorAll('#pro-img')
 
 
 
+        // document.querySelector('#cart-nav','#cart-product','#cart-total')
+        // .classList.remove('bg-dark');
+        // document.querySelector('#cart-nav','#cart-product','#cart-total')
+        // .classList.remove('text-white');
 
+        // document.getElementById('cart-nav')
+        // .classList.remove('bg-dark');
+        // document.getElementById('cart-nav')
+        // .classList.remove('text-white');
+        
+        // document.getElementById('cart-nav')
+        // .classList.add('bg-dark');
+        // document.getElementById('cart-nav')
+        // .classList.add('text-white');
+
+        // document.querySelector('#cart-nav','#cart-product','#cart-total')
+        // .classList.add('bg-dark');
+        // document.querySelector('#cart-nav','#cart-product','#cart-total')
+        // .classList.add('text-white');
 
 
 
