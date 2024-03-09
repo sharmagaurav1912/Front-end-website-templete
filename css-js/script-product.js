@@ -72,3 +72,46 @@ themeImg.addEventListener("click",()=>{
         .classList.remove('text-white')
     }
 })
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// buy button script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+isUserLogged = false;
+
+document.getElementById('cart-btn-buy')
+.addEventListener("click", () => {
+    console.log(" buy button clicked");
+
+    if (isUserLogged) {
+        // console.log("wait.. opening buy now page");
+        window.location.href = "./checkout.html"
+    } else {
+        console.log("login First");
+        // alert('login First');
+        window.location.href = "./login.html"
+    }
+})
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// cart button script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+document.getElementById('cart-btn-cart')
+.addEventListener("click", (n) => {
+    console.log(" cart button clicked");
+
+    if (isUserLogged) {
+        // console.log(n.target.parentNode.id);
+        // count ++;
+        // cartCount.innerText = count;
+        // console.log("cart count incremented");
+
+        id = n.target.parentNode.id;
+        localStorage.setItem('product-id',id);
+        window.location.href = "./cart.html"
+
+    } else {
+        console.log("login First");
+        window.location.href = "./login.html"
+    }
+})
