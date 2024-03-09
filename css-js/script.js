@@ -4,7 +4,10 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 document.addEventListener('DOMContentLoaded',
-async function getData() {
+async function getData(e) {
+
+    e.preventDefault;
+
     const response = await fetch('https://dummyjson.com/products');
     const data = await response.json();
         // console.log(data);
@@ -30,21 +33,16 @@ async function getData() {
             <button class="border-0 bg-success rounded text-white px-2 py-1" id="cart-btn">Add to Cart</button>`;
 
             
-            proCont.appendChild(product);
-            
+            proCont.appendChild(product);            
         }  
       }
     );
-
-
-
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // product Clicking script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    let isUserLogged = false;
+    var isUserLogged = localStorage.getItem('isUserLogged');
     let count = 0;
 
     let cartCount = document.getElementById('cart-count');
@@ -63,6 +61,7 @@ async function getData() {
                 } else {
                     console.log("login First");
                     // alert('login First');
+                    localStorage.setItem('location',window.location);
                     window.location.href = "./login.html"
                 }
 
@@ -80,6 +79,7 @@ async function getData() {
 
                 } else {
                     console.log("login First");
+                    localStorage.setItem('location',window.location);
                     window.location.href = "./login.html"
                 }
 
@@ -118,7 +118,9 @@ login.addEventListener("click",() => {
 
     } else {
 
-        // window.location.href = "./login.html";
+        localStorage.setItem('location',window.location);
+        window.location.href = "./login.html";
+
         isUserLogged = true;
         console.log("login successful");
         setTimeout(() => {
@@ -141,6 +143,7 @@ cart.addEventListener("click",() => {
 
     } else {
         console.log("login first");
+        localStorage.setItem('location',window.location);
         window.location.href = "./login.html";
     }
     
