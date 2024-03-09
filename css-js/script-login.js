@@ -10,24 +10,45 @@ loginButton.addEventListener("click",() => {
 
     if (inputUsername.value == "" && inputPassword.value == "") {
         console.log("type something");
+        document.getElementById('error-msg')
+        .innerText = "Type Something";
     } else {
         console.log("okay");
-        window.location.href = "./index.html"; 
+
+        isUserLogged = true;
+        localStorage.setItem('isUserLogged',isUserLogged);
+        var redirectLocation = localStorage.getItem('location');
+        window.location.href = redirectLocation; 
     }
 })
 
-document.querySelectorAll('#pro-img')
-.forEach((e)=>{
-    e.addEventListener("click",(n)=>{
-        console.log(n.target);
-    })
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// dark mode script
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let productPage = document.getElementById('product-page');
+let lightTheme = true;
+let themeImg = document.getElementById('theme-img');
+themeImg.addEventListener("click",()=>{   
+    let body = document.querySelector('body');
+
+    if (lightTheme) {
+        body.style.backgroundColor = "black";
+        body.style.color = "white";
+        themeImg.src="img/sun.png";
+        lightTheme = false;
+    }
+    
+    else{     
+        body.style.backgroundColor = "white";
+        body.style.color = "black";  
+        themeImg.src="img/crescent-moon.png";
+        lightTheme = true; 
+    }
 })
 
 
-document.getElementById('buy-now-btn')
-.addEventListener("click", () => {
-    console.log('clicked');
-})
+
 
 
 
