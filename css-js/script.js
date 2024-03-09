@@ -118,7 +118,7 @@ login.addEventListener("click",() => {
 
     } else {
 
-        window.location.href = "./login.html";
+        // window.location.href = "./login.html";
         isUserLogged = true;
         console.log("login successful");
         setTimeout(() => {
