@@ -3,7 +3,10 @@
 // product loading script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 document.addEventListener('DOMContentLoaded',
-async function fetchData() {
+async function fetchData(e) {
+
+    e.preventDefault;
+    
     const response = await fetch('https://dummyjson.com/products');
     const data = await response.json();
         // console.log(data);
@@ -55,7 +58,6 @@ themeImg.addEventListener("click",()=>{
         .classList.add('bg-dark')
         document.getElementById('product-page')
         .classList.add('text-white')
-        
     }
     
     else{     
@@ -77,7 +79,7 @@ themeImg.addEventListener("click",()=>{
 // buy button script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-isUserLogged = false;
+var isUserLogged = localStorage.getItem('isUserLogged');
 
 document.getElementById('cart-btn-buy')
 .addEventListener("click", () => {
@@ -85,17 +87,21 @@ document.getElementById('cart-btn-buy')
 
     if (isUserLogged) {
         // console.log("wait.. opening buy now page");
-        window.location.href = "./checkout.html"
+        window.location.href = "./checkout.html";
+        // console.log(window.location);
     } else {
         console.log("login First");
         // alert('login First');
-        window.location.href = "./login.html"
+        // console.log(window.location);
+        localStorage.setItem('location',window.location);
+        window.location.href = "./login.html";
     }
 })
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // cart button script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 document.getElementById('cart-btn-cart')
 .addEventListener("click", (n) => {
     console.log(" cart button clicked");
@@ -108,10 +114,13 @@ document.getElementById('cart-btn-cart')
 
         id = n.target.parentNode.id;
         localStorage.setItem('product-id',id);
-        window.location.href = "./cart.html"
+        window.location.href = "./cart.html";
+        // console.log(window.location);
 
     } else {
         console.log("login First");
-        window.location.href = "./login.html"
+        // console.log(window.location);
+        localStorage.setItem('location',window.location);
+        window.location.href = "./login.html";
     }
 })
