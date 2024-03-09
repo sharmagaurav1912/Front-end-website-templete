@@ -1,6 +1,9 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // product loading script
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+let totalAmount = 0;
+let tax = 5;
+let grandTotal = 0;
 
 document.addEventListener('DOMContentLoaded',
 async function getData() {
@@ -25,13 +28,13 @@ async function getData() {
                 <br>
                 <span id="cart-product-des">${pro.description}</span>
             </div>
-            <div class="col-lg-2 col-sm-4 py-2 border">
+            <div class="col-lg-2 col-md-4 col-sm-4 py-2 border">
                 <span id="cart-product-price">₹${pro.price}/-</span>
             </div>
-            <div class="col-lg-2 col-sm-4 py-2 border">
+            <div class="col-lg-2 col-md-4 col-sm-4 py-2 border">
                 <input type="number" id="cart-pro-quantity" value="1" class="w-100">
             </div>
-            <div class="col-lg-2 col-sm-4 py-2 border">
+            <div class="col-lg-2 col-md-4 col-sm-4 py-2 border">
                 <span id="cart-product-total">Total</span>
             </div>
             
@@ -39,12 +42,25 @@ async function getData() {
 
             
             proCont.appendChild(product);
+
+            // console.log(pro.price);
             
             let proQuantity = document.getElementById('cart-pro-quantity');
             let proTotal = document.getElementById('cart-product-total');
     
-            proTotal.textContent = `₹${proQuantity.value * pro.price}/-`;
+            proTotal.innerText = `₹ ${pro.price} /-`;
+            // proTotal.innerText = `₹${proQuantity.value * pro.price}/-`;
+
+            document.getElementById('total-amount')
+            .innerText = `Total Amont - ₹${totalAmount}/-`;
+
+            document.getElementById('amount-tax')
+            .innerText = `Payable Tax - ${tax}%`;
+
+            document.getElementById('grand-total')
+            .innerText = `Grand Total - ₹${grandTotal}/-`
         }  
+
 
     );
 
