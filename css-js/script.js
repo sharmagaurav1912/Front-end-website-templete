@@ -159,8 +159,6 @@ themeImg.addEventListener("click",()=>{
         body.style.color = "white";
         themeImg.src="img/sun.png";
         lightTheme = false;
-        
-        
     }
     
     else{     
@@ -168,6 +166,5 @@ themeImg.addEventListener("click",()=>{
         body.style.color = "black";  
         themeImg.src="img/crescent-moon.png";
         lightTheme = true; 
-        
     }
 })
